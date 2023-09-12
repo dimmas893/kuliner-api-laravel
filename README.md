@@ -6,6 +6,11 @@ aplikasi kuliner
 <img src="/4.jpg" width="100%">
 
 instalasi
+
 -composer update
+
 -php artisan key:generate
+
 -php artisan migrate:fresh --seed
+
+<b>demo : https://kulineran.com.anandadimmasbudiarto.my.id</b>
