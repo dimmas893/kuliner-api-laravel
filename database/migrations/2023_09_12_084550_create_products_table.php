@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('kode');
             $table->string('nama');
             $table->double('harga');
-            $table->boolean('bestseller')->default(true);
-            $table->boolean('is_ready')->default(true);
+            $table->string('bestseller')->default('true');
+            $table->string('is_ready')->default('true');
             $table->string('gambar');
             $table->timestamps();
         });

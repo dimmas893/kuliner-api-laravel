@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\keranjangController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -25,9 +26,17 @@ Route::get('/products', [ProductController::class, 'all']);
 Route::get('/best-products', [ProductController::class, 'bestseller']);
 Route::get('/products/{id}', [ProductController::class, 'detail']);
 
+Route::post('/products', [ProductController::class, 'post']);
+Route::post('/products/{id}', [ProductController::class, 'update']);
+Route::delete('/products/{id}', [ProductController::class, 'delete']);
 
 Route::get('/keranjangs', [keranjangController::class, 'all']);
 Route::post('/keranjangs', [keranjangController::class, 'post']);
 Route::delete('/keranjangs/{id}', [keranjangController::class, 'delete']);
 
 Route::post('/pesanans', [PesananController::class, 'post']);
+
+
+
+Route::post('/login', [LoginController::class, 'index']);
+Route::get('/logout', [LoginController::class, 'logout']);
