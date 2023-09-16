@@ -29,7 +29,6 @@ class ProductController extends Controller
 
     public function all(Request $request)
     {
-
         $productData = Product::query();
         if (!empty($request['bestseller'])) {
             $bestseller =  $request['bestseller'];
@@ -45,10 +44,7 @@ class ProductController extends Controller
             $is_ready = $request['is_ready'];
             $productData->where('is_ready', $is_ready);
         }
-
-        $perPage = (int) $request->input('perPage', 10);
-        // dd($perPage);
-        $products = $productData->paginate($perPage);
+        $products = $productData->get();
 
         return response()->json($products);
     }

@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        for ($p = 1; $p <= 1000; $p++) {
+        for ($p = 1; $p <= 100; $p++) {
             for ($i = 1; $i <= 10; $i++) {
                 Product::create([
                     'kode' => 'k-' . $i,
